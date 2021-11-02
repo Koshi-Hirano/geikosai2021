@@ -8,6 +8,9 @@ const Frame = styled.div`
 const Container = styled.div`
     width: 82vw;
 `
+const Geikochan = styled.img`
+    width: 80%;
+`
 const Title = styled.h2`
     font-family: 游ゴシック;
     color: #633701;
@@ -31,6 +34,11 @@ const LogoImageLeft = styled.img`
     width: 30%;
     margin-left: 5vw;
 `
+const LogoImageLeftHidden = styled.img`
+    width: 30%;
+    margin-left: 5vw;
+    opacity: 0.3;
+`
 const LogoFrameLeft = styled.div`
     display: flex;
     flex-direction: column;
@@ -48,6 +56,11 @@ const LogoRight = styled.div`
 const LogoImageRight = styled.img`
     width: 30%;
     margin-right: 5vw;
+`
+const LogoImageRightHidden = styled.img`
+    width: 30%;
+    margin-right: 5vw;
+    opacity: 0.3;
 `
 const LogoFrameRight = styled.div`
     display: flex;
@@ -89,9 +102,24 @@ const returnTop = () => {
     });
 };
 export default function GakusaiPC(){
+
+    const GeikoRandom = () => {
+        const random = Math.floor( Math.random() * 3 );
+        if(random == 0){
+            return <Geikochan src="./production/geiko-1.png" />
+        }
+        else if(random == 1){
+            return <Geikochan src="./production/geiko-2.png" />
+        }
+        else if(random == 2){
+            return <Geikochan src="./production/geiko-3.png" />
+        }
+    }
+
     return <Frame>
         <Header />
         <Container>
+            {GeikoRandom()}
             <Sub><SubImage src="./production/content.png" /></Sub>
             <Title>学祭企画</Title>
             <Phrase>芸工祭では、様々な企画がイベントを開催します。舞台、音響、衣装、照明など全てを学生が一から作り上げ、芸工祭を彩ります。</Phrase>
@@ -110,21 +138,21 @@ export default function GakusaiPC(){
                 </LogoFrameRight>
             </LogoRight>
             <LogoLeft>
-                <Link href="/CBA"><LogoImageLeft src="./production/cbalogo.png"/></Link>
+                {/*<Link href="/CBA">*/}<LogoImageLeftHidden src="./production/cbalogo.png"/>{/*</Link>*/}
                 <LogoFrameLeft>
                     <LogoTitle>CBA project</LogoTitle>
                     <LogoPhrase>text text</LogoPhrase>
                 </LogoFrameLeft>
             </LogoLeft>
             <LogoRight>
-                <Link href="/"><LogoImageRight src="./production/3ken.png"/></Link>
+                {/*<Link href="/">*/}<LogoImageRightHidden src="./production/3ken.png"/>{/*</Link>*/}
                 <LogoFrameRight>
                     <LogoTitle>噴水企画(3研)</LogoTitle>
                     <LogoPhrase>text text</LogoPhrase>
                 </LogoFrameRight>
             </LogoRight>
             <LogoLeft>
-                <Link href="/Firefes"><LogoImageLeft src="./production/firefes.png"/></Link>
+                {/*<Link href="/Firefes">*/}<LogoImageLeftHidden src="./production/firefes.png"/>{/*</Link>*/}
                 <LogoFrameLeft>
                     <LogoTitle>火祭</LogoTitle>
                     <LogoPhrase>text text</LogoPhrase>
@@ -138,14 +166,14 @@ export default function GakusaiPC(){
                 </LogoFrameRight>
             </LogoRight>
             <LogoLeft>
-                <Link href="/Goken"><LogoImageLeft src="./production/5ken.png"/></Link>
+                {/*<Link href="/Goken">*/}<LogoImageLeftHidden src="./production/5ken.png"/>{/*</Link>*/}
                 <LogoFrameLeft>
                     <LogoTitle>5研企画</LogoTitle>
                     <LogoPhrase>text text</LogoPhrase>
                 </LogoFrameLeft>
             </LogoLeft>
             <LogoRight>
-                <Link href="/Nullken"><LogoImageRight src="./production/nullkenlogo.png"/></Link>
+                {/*<Link href="/Nullken">*/}<LogoImageRightHidden src="./production/nullkenlogo.png"/>{/*</Link>*/}
                 <LogoFrameRight>
                     <LogoTitle>未定研</LogoTitle>
                     <LogoPhrase>text text</LogoPhrase>

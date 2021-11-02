@@ -9,6 +9,10 @@ const Frame = styled.div`
     align-items: center;
     width: 100vw;
 `
+const Geikochan = styled.img`
+    width: 80%;
+    margin-top: 5vh;
+`
 const Schedule = styled.div`
 
 `
@@ -38,8 +42,21 @@ const returnTop = () => {
     });
 };
 export default function SchedulePhone(){
+    const GeikoRandom = () => {
+        const random = Math.floor( Math.random() * 3 );
+        if(random == 0){
+            return <Geikochan src="./production/geiko-1.png" />
+        }
+        else if(random == 1){
+            return <Geikochan src="./production/geiko-2.png" />
+        }
+        else if(random == 2){
+            return <Geikochan src="./production/geiko-3.png" />
+        }
+    }
     return <Frame>
         <Header />
+        {GeikoRandom()}
         <Sub><SubImage src="./production/schedule_title.png"/></Sub>
         <Schedule>
             <ScheduleImage src="./production/schedule_guide.png" />

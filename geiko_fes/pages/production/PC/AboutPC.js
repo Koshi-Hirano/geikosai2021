@@ -7,6 +7,9 @@ const Frame = styled.div`
 const Container = styled.div`
     width: 82vw;
 `
+const Geikochan = styled.img`
+    width: 80%;
+`
 const About = styled.div`
 
 `
@@ -21,22 +24,25 @@ const Date = styled.img`
 const Mascot = styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 70%;
     margin-right: auto;
     margin-left: auto;
 `
 const MascotImage = styled.img`
-
+    width: 40%;
 `
 const MascotBox = styled.div`
 
 `
-const MascotTitle = styled.h3`
+const MascotTitle = styled.h2`
     font-family: 游ゴシック;
+    font-weight: bold;
     color: #633701;
 `
 const MascotPhrase = styled.p`
     font-family: 游ゴシック;
+    font-weight: 500;
     font-size: 1.2vw;
 `
 const Sub = styled.div`
@@ -62,9 +68,24 @@ const returnTop = () => {
     });
 };
 export default function AboutPC(){
+
+    const GeikoRandom = () => {
+        const random = Math.floor( Math.random() * 3 );
+        if(random == 0){
+            return <Geikochan src="./production/geiko-1.png" />
+        }
+        else if(random == 1){
+            return <Geikochan src="./production/geiko-2.png" />
+        }
+        else if(random == 2){
+            return <Geikochan src="./production/geiko-3.png" />
+        }
+    }
+
     return <Frame>
         <Header />
         <Container>
+            {GeikoRandom()}
             <Sub><SubImage src="./production/whatis.png"/></Sub>
             <About>
                 <AboutImage src="./production/ku-sui_photo.png" />
@@ -73,7 +94,7 @@ export default function AboutPC(){
             <Date src="./production/schedule.png" />
             <Sub><SubImage src="./production/mascot.png"/></Sub>
             <Mascot>
-                <MascotImage src="./production/"/>
+                <MascotImage src="./production/geiko-chan.png"/>
                 <MascotBox>
                     <MascotTitle>げいこちゃん</MascotTitle>
                     <MascotPhrase>

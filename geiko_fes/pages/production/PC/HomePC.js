@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 import Link from 'next/link'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 
@@ -67,13 +68,31 @@ const GakusaiPhrase = styled.p`
     font-size: 1.2vw;
 `
 const Logo = styled.div`
+    width: 100%;
+    height: 20vh;
     display: flex;
     justify-content: space-around;
     margin-top: 8%;
 `
+const LogoFrame = styled.div`
+    width: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 const LogoImage = styled.img`
-    width: 15%;
-    height: auto;
+    width: 80%;
+    transition: 0.5s;
+    &:hover {
+        width: 100%;
+    }
+`
+const LogoImageHidden = styled.img`
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    opacity: 0.3;
 `
 const Other = styled.div`
     display: flex;
@@ -160,16 +179,16 @@ export default function HomePC(){
                     <Link href="/Gakusai"><GakusaiTitle>学祭企画</GakusaiTitle></Link>
                     <GakusaiPhrase>芸工祭では、様々な企画がイベントを開催します。舞台、音響、衣装、照明など全てを学生が一から作り上げ、芸工祭を彩ります。</GakusaiPhrase>
                     <Logo>
-                        <Link href="/Zenya"><LogoImage src="./production/zenya.png"/></Link>
-                        <Link href="http://project-of-2ken.com/21withyou/"><LogoImage src="./production/2ken.png"/></Link>
-                        <Link href="/CBA"><LogoImage src="./production/cbalogo.png"/></Link>
-                        <Link href="/"><LogoImage src="./production/3ken.png"/></Link>
+                        <Link href="/Zenya"><LogoFrame><LogoImage src="./production/zenya.png"/></LogoFrame></Link>
+                        <Link href="http://project-of-2ken.com/21withyou/"><LogoFrame><LogoImage src="./production/2ken.png"/></LogoFrame></Link>
+                        {/*<Link href="/CBA">*/}<LogoFrame><LogoImageHidden src="./production/cbalogo.png"/></LogoFrame>{/*</Link>*/}
+                        {/*<Link href="/">*/}<LogoFrame><LogoImageHidden src="./production/3ken.png"/></LogoFrame>{/*</Link>*/}
                     </Logo>
                     <Logo>
-                        <Link href="/Firefes"><LogoImage src="./production/firefes.png"/></Link>
-                        <Link href="/Panf"><LogoImage src="./production/Panf.png"/></Link>
-                        <Link href="/Goken"><LogoImage src="./production/5ken.png"/></Link>
-                        <Link href="/Nullken"><LogoImage src="./production/nullkenlogo.png"/></Link>
+                        {/*<Link href="/Firefes">*/}<LogoFrame><LogoImageHidden src="./production/firefes.png"/></LogoFrame>{/*</Link>*/}
+                        <Link href="/Panf"><LogoFrame><LogoImage src="./production/Panf.png"/></LogoFrame></Link>
+                        {/*<Link href="/Goken">*/}<LogoFrame><LogoImageHidden src="./production/5ken.png"/></LogoFrame>{/*</Link>*/}
+                        {/*<Link href="/Nullken">*/}<LogoFrame><LogoImageHidden src="./production/nullkenlogo.png"/></LogoFrame>{/*</Link>*/}
                     </Logo>
                 </GakusaiKikaku>
                 <Other>

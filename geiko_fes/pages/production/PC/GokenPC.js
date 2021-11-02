@@ -10,6 +10,9 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const Geikochan = styled.img`
+    width: 80%;
+`
 const MainFrame = styled.div`
     display: flex;
     flex-direction: column;
@@ -53,9 +56,24 @@ const returnTop = () => {
     });
 };
 export default function GokenPC(){
+
+    const GeikoRandom = () => {
+        const random = Math.floor( Math.random() * 3 );
+        if(random == 0){
+            return <Geikochan src="./production/geiko-1.png" />
+        }
+        else if(random == 1){
+            return <Geikochan src="./production/geiko-2.png" />
+        }
+        else if(random == 2){
+            return <Geikochan src="./production/geiko-3.png" />
+        }
+    }
+
     return <Frame>
         <Header />
         <Container>
+            {GeikoRandom()}
             <Sub><SubImage src="./production/content.png" /></Sub>
             <MainFrame>
                 <Title>5研企画</Title>

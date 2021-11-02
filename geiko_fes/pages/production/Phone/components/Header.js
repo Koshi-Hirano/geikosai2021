@@ -44,7 +44,10 @@ const CloseImage = styled.img`
     margin-right: 5%;
 `
 const MenuItem = styled.p`
-
+    font-size: 4vw;
+    width: 100vw;
+    margin-top: 5vh;
+    
 `
 const Hiden = keyframes`
     from { 
@@ -62,6 +65,10 @@ const NavHidden = styled.input`
     }
     &:
 `
+const Line = styled.hr`
+    width: 80%;
+    margin-top: 5vh;
+`
 export default function Header(){
     return  <div>
         <NavHidden id="nav-input" type="checkbox"/>
@@ -72,6 +79,12 @@ export default function Header(){
             <Link href="/About"><MenuItem>芸工祭について</MenuItem></Link>
             <Link href="/Schedule"><MenuItem>スケジュール</MenuItem></Link>
             <Link href="/Gakusai"><MenuItem>学祭企画</MenuItem></Link>
+            <Line />
+            <Link href="/"><MenuItem>ご案内</MenuItem></Link>
+            <Link href="/"><MenuItem>お問い合わせ</MenuItem></Link>
+            <Link href="https://kyudaisai.jp/74th/link/"><MenuItem>九大祭ホームページ</MenuItem></Link>
+            <Line />
+            <Link href="https://twitter.com/QU_GEIKOfes_18"><MenuItem>Twitter</MenuItem></Link>
         </MenuContent>
         <Frame>
             <Link href="./HomePage">

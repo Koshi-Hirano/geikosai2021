@@ -24,13 +24,11 @@ const HeaderTitle = styled.p`
     font-size: 5vw;
     margin-right: 11vw;
     margin-left: 2vw;
-    margin-top: 10vh;
     font-weight: bold;
 `
 const HeaderItem = styled.p`
     font-size: 2.5vw;
     margin: 0 6vw;
-    margin-top: 5vh;
 `
 
 const TaimenImage = styled.img`
@@ -89,29 +87,19 @@ const FirefesImage = styled.img`
 `
 
 const LinkFrame = styled.div`
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 const LinkItem = styled.p`
     font-size: 2vw;
     font-weight: 700;
     line-height: 1.5;
-    position: relative;
-    display: inline-block;
-    padding: 1rem 5rem;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
     letter-spacing: 0.1em;
     color: black;
-    border-radius: 100vw;
     margin-bottom:2vw;
+    margin-left: 7vw;
+    margin-right: 7vw;
 `
 const ButtomFrame = styled.div`
     height: 30vh;
@@ -139,8 +127,8 @@ const ButtomItem = styled.p`
     border-radius: 100vw;
     background-color: #9f000c;
     border-bottom: 5px solid #47000c;
-    margin-right: 7vw;
-    margin-left: 7vw;
+    margin-right: 8vw;
+    margin-left: 8vw;
     margin-bottom: 20vh;
     &:hover {
         margin-top: 3px;
@@ -151,7 +139,7 @@ const ButtomItem = styled.p`
 
 const TwitterFrame = styled.div`
     width: 70%;
-    height: 50vh; 
+    height: 90vh; 
     margin-left: auto;
     margin-right: auto;
 `
@@ -165,7 +153,7 @@ const Footer = styled.div`
     justify-content: center;
     line-height: 2vw;
     font-size: 2vw;
-    margin-top: 60vh;
+    margin-top: 50vh;
 `
 const FooterItem = styled.p`
     margin:0 4vw;
@@ -173,7 +161,7 @@ const FooterItem = styled.p`
 export default function Firefes(){
     const TwitterDesign = {
         width: '100%',
-        height: '70vh',
+        height: '90vh',
     }
 
     return <Frame>
@@ -207,7 +195,7 @@ export default function Firefes(){
         </LinkFrame>
         <ButtomFrame>
             <Link href="https://www.youtube.com/channel/UCRbLmuWQc1-f-sewoofzD8w"><ButtomItem>配信リンク</ButtomItem></Link>
-            <Link href="/"><ButtomItem>申請フォーム</ButtomItem></Link>
+            <Link href="https://forms.gle/8pcJ4oaTEKUVyF2c7"><ButtomItem>申請フォーム</ButtomItem></Link>
         </ButtomFrame>
         <TwitterFrame>
             <TwitterTimelineEmbed sourceType="profile" screenName="himatsuri50" options={TwitterDesign}/>

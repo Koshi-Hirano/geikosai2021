@@ -7,6 +7,5 @@ const Frame = styled.div`
 `
 export default function Footer(){
     return <Frame>
-        footer
     </Frame>
 }

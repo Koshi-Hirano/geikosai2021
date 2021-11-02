@@ -8,6 +8,10 @@ const Frame = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const Geikochan = styled.img`
+    width: 80%;
+    margin-top: 5vh;
+`
 const About = styled.div`
 
 `
@@ -27,9 +31,11 @@ const Mascot = styled.div`
     width: 70%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 15vh:
 `
 const MascotImage = styled.img`
-
+    width: 60%;
+    margin-bottom: 5vh;
 `
 const MascotBox = styled.div`
 
@@ -40,7 +46,9 @@ const MascotTitle = styled.h3`
 `
 const MascotPhrase = styled.p`
     font-family: 游ゴシック;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
+    font-weight: 600;
+    line-height: 2.0;
 `
 const Sub = styled.div`
     margin-top: 10vh;
@@ -55,7 +63,7 @@ const SubImage = styled.img`
 `
 const Back = styled.img`
     width 10%;
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-bottom: 5vh;
 `
 const returnTop = () => {
@@ -66,8 +74,21 @@ const returnTop = () => {
 };
 
 export default function AboutPhone(){
+    const GeikoRandom = () => {
+        const random = Math.floor( Math.random() * 3 );
+        if(random == 0){
+            return <Geikochan src="./production/geiko-1.png" />
+        }
+        else if(random == 1){
+            return <Geikochan src="./production/geiko-2.png" />
+        }
+        else if(random == 2){
+            return <Geikochan src="./production/geiko-3.png" />
+        }
+    }
     return <Frame>
         <Header />
+        {GeikoRandom()}
         <Sub><SubImage src="./production/whatis.png"/></Sub>
         <About>
             <AboutImage src="./production/ku-sui_photo.png" />
@@ -76,7 +97,7 @@ export default function AboutPhone(){
         <Date src="./production/schedule.png" />
         <Sub><SubImage src="./production/mascot.png"/></Sub>
         <Mascot>
-            <MascotImage src="./production/"/>
+            <MascotImage src="./production/geiko-chan.png"/>
             <MascotBox>
                 <MascotTitle>げいこちゃん</MascotTitle>
                 <MascotPhrase>

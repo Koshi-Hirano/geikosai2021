@@ -35,7 +35,6 @@ const MenuItem = styled.button`
     border: none;
     background-color: transparent;
     font-size: 1.2vw;
-    font-family: 游ゴシック;
     text-decoration:underline;
     text-decoration-color:#FFFFFF;
     margin-left: 20%;
