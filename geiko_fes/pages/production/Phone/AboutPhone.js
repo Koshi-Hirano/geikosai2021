@@ -7,6 +7,7 @@ const Frame = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Helvetica Neue','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 `
 const Geikochan = styled.img`
     width: 80%;
@@ -40,13 +41,13 @@ const MascotImage = styled.img`
 const MascotBox = styled.div`
 
 `
-const MascotTitle = styled.h3`
-    font-family: 游ゴシック;
+const MascotTitle = styled.p`
     color: #633701;
+    font-size: 6vw;
+    font-weight: bold;
 `
 const MascotPhrase = styled.p`
-    font-family: 游ゴシック;
-    font-size: 1.5vw;
+    font-size: 3.8vw;
     font-weight: 600;
     line-height: 2.0;
 `
@@ -60,9 +61,13 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 5vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
 `
 const Back = styled.img`
-    width 10%;
+    width 20%;
     margin-top: 15vh;
     margin-bottom: 5vh;
 `

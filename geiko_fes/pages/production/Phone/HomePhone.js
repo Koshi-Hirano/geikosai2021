@@ -1,13 +1,15 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
-import styled from 'styled-components'
+import styled, { keyframes} from 'styled-components'
 import Link from 'next/dist/client/link'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
+import YouTube from "react-youtube";
 
 const Frame = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Helvetica Neue','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 `
 const Top = styled.div`
     width: 80%;
@@ -20,28 +22,71 @@ const SubTop = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+`
+const AppearLogo = keyframes`
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
 `
 const TopImage = styled.img`
-    width: 45%;
-    height: auto;
+    width: 36vw;
+    opacity: 0;
+    animation-name: ${AppearLogo};
+    animation-duration: 2s;
+    animation-delay: 1s; 
+    animation-fill-mode: forwards;
+`
+const AppearPhrase = keyframes`
+    from { 
+        opacity: 0;
+        margin-left: 0;
+    }
+    to { 
+        opacity: 1;
+        margin-left: 5%;
+    }
 `
 const ImagePhrase = styled.img`
     width: 90%;
     height: auto;
     margin-top: 10%;
     margin-bottom: 10%;
+    opacity: 0;
+    animation-name: ${AppearPhrase};
+    animation-duration: 2s;
+    animation-delay: 2s; 
+    animation-fill-mode: forwards;
+`
+const AppearDate = keyframes`
+    from { 
+        opacity: 0;
+        margin-left: 0;
+    }
+    to { 
+        opacity: 1;
+        margin-left: 12%;
+    }
 `
 const ImageDate = styled.img`
     width: 70%;
     height: auto;
+    opacity: 0;
+    animation-name: ${AppearDate};
+    animation-duration: 2s;
+    animation-delay: 2s; 
+    animation-fill-mode: forwards;
 `
 
 const News = styled.div`
     width: 60%;
-    height: 80vh; 
+    height: 71vh; 
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #6edefa;
 `
 
 const About = styled.div`
@@ -64,14 +109,23 @@ const Kikaku = styled.div`
     flex-direction: column;
     align-items: center;
 `
-const KikakuTitle = styled.h3`
-    font-family: 游ゴシック;
+const KikakuFrame = styled.div`
+    height: 7vh;
+`
+const KikakuTitle = styled.p`
     color: #633701;
+    font-size: 5vw;
+    font-weight: bold;
+    transition: 0.5s;
+    &:hover {
+        font-size: 5.5vw;
+        transform: rotate(5deg);
+    }
 `
 const KikakuPhrase = styled.p`
-    font-family: 游ゴシック;
     text-align: left;
-    font-size: 2.0vw;
+    font-size: 3.7vw;
+    font-weight: 530;
     width: 100%;
 `
 const Logo = styled.div`
@@ -79,13 +133,14 @@ const Logo = styled.div`
     height: 15vh;
     display: flex;
     justify-content: space-around;
-    margin-top: 8%;
+    margin-top: 5%;
 `
 const LogoFrame = styled.div`
-    width: 20vw;
+    width: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: 
 `
 const LogoImage = styled.img`
     width: 70%;
@@ -109,13 +164,9 @@ const Info = styled.div`
     width: 100%;
     margin-top: 5vh;
 `
-const InfoItem = styled.button`
-    background-color: transparent;
-    border-color: #402300;
-    font-size: 3.0vw;
-    width: 30vw;
-    height: 10vh;
-    margin-bottom: 5vh;
+const Prepare = styled.p`
+    font-size: 4vw;
+    font-weight: 600;
 `
 
 const Sub = styled.div`
@@ -128,10 +179,37 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 5vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
+`
+const PanfImage = styled.img`
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+`
+const FormButtom = styled.p`
+    border: 5px solid #432c02;
+    width: 60%;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5vw;
+    font-weight: bold;
+    color: #432c02; 
+    padding-top: 5%;
+    padding-bottom: 5%;
+    transition: 0.5s;
+    &:hover {
+        background-color: #432c02;
+        color: white;
+    }
 `
 
 const Back = styled.img`
-    width 10%;
+    width 20%;
     margin-top: 10vh;
     margin-bottom: 5vh;
 `
@@ -145,9 +223,12 @@ const returnTop = () => {
 export default function HomePC(){
     const TwitterDesign = {
         width: '100%',
-        height: '80vh',
+        height: '70vh',
     }
-    
+    const opts = {
+        height: '200',
+        width: '300',
+    }
     return <Frame>
         <Header />
         <Top>
@@ -168,36 +249,35 @@ export default function HomePC(){
         <Sub><SubImage src="./production/content.png" /></Sub>
         <Contents>
                 <Kikaku>
-                    <Link href="/Gakusai"><KikakuTitle>学祭企画</KikakuTitle></Link>
+                    <Link href="/Gakusai"><KikakuFrame><KikakuTitle>学祭企画</KikakuTitle></KikakuFrame></Link>
                     <KikakuPhrase>芸工祭では、様々な企画がイベントを開催します。舞台、音響、衣装、照明など全てを学生が一から作り上げ、芸工祭を彩ります。</KikakuPhrase>
                     <Logo>
                         <Link href="/Zenya"><LogoFrame><LogoImage src="./production/zenya.png"/></LogoFrame></Link>
                         <Link href="http://project-of-2ken.com/21withyou/"><LogoFrame><LogoImage src="./production/2ken.png"/></LogoFrame></Link>
-                        {/*<Link href="/CBA">*/}<LogoFrame><LogoImageHidden src="./production/cbalogo.png"/></LogoFrame>{/*</Link>*/}
-                        {/*<Link href="/">*/}<LogoFrame><LogoImageHidden src="./production/3ken.png"/></LogoFrame>{/*</Link>*/}
+                        <Link href="/CBA"><LogoFrame><LogoImage src="./production/cbalogo.png"/></LogoFrame></Link>
+                        <Link href="https://3kenfunsui.github.io/2021/"><LogoFrame><LogoImage src="./production/3ken.png"/></LogoFrame></Link>
                     </Logo>
                     <Logo>
-                        {/*<Link href="/Firefes">*/}<LogoFrame><LogoImageHidden src="./production/firefes.png"/></LogoFrame>{/*</Link>*/}
+                        <Link href="/Firefes"><LogoFrame><LogoImage src="./production/firefes.png"/></LogoFrame></Link>
                         <Link href="/Panf"><LogoFrame><LogoImage src="./production/Panf.png"/></LogoFrame></Link>
-                        {/*<Link href="/Goken">*/}<LogoFrame><LogoImageHidden src="./production/5ken.png"/></LogoFrame>{/*</Link>*/}
-                        {/*<Link href="/Nullken">*/}<LogoFrame><LogoImageHidden src="./production/nullkenlogo.png"/></LogoFrame>{/*</Link>*/}
+                        <Link href="/Workshop"><LogoFrame><LogoImage src="./production/5ken.png"/></LogoFrame></Link>
+                        <Link href="/Nullken"><LogoFrame><LogoImage src="./production/nullkenlogo.png"/></LogoFrame></Link>
                     </Logo>
                 </Kikaku>
                 <Kikaku>
-                    <Link href="/Goken"><KikakuTitle>5研企画</KikakuTitle></Link>
-                    <KikakuPhrase>5研企画は、芸工祭実行委員会である5研が運営する企画です。今年度は、、、、、、を実施します。</KikakuPhrase>
+                    <Link href="/Workshop"><KikakuFrame><KikakuTitle>5研企画</KikakuTitle></KikakuFrame></Link>
+                    <KikakuPhrase>5研企画は、芸工祭実行委員会である5研が運営する企画です。今年度はワークショップを実施します。</KikakuPhrase>
                 </Kikaku>
                 <Kikaku>
-                    <Link href="/ippan-kikaku"><KikakuTitle>一般企画</KikakuTitle></Link>
+                    <Link href="/ippan-kikaku"><KikakuFrame><KikakuTitle>一般企画</KikakuTitle></KikakuFrame></Link>
                     <KikakuPhrase>一般企画は、教室などで学部内外からの公募により実施されます。</KikakuPhrase>
                 </Kikaku>
         </Contents>
         <Sub><SubImage src="./production/info.png"/></Sub>
         <Info>
-            <Link href="/" ><InfoItem>企画団体の方へ</InfoItem></Link>
-            <Link href="/" ><InfoItem>ご視聴の方へ</InfoItem></Link>
-            <Link href="/" ><InfoItem>お問い合わせ</InfoItem></Link>
-            <Link href="/" ><InfoItem>リンク</InfoItem></Link>
+            <YouTube videoId="AdEcqR0XZWk" opts={opts}/> 
+            <Link href="/Panf"><PanfImage src="./production/panf_button.png" /></Link>
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeU7JA71AgD5XiEHCdIuxYNr05rwvpCj1LheN8TSms4iGxEnw/viewform?usp=sf_link"><FormButtom>対面参加応募フォーム</FormButtom></Link>
         </Info>
         <Back src="./production/tothetop.png" onClick={returnTop} />
         <Footer />

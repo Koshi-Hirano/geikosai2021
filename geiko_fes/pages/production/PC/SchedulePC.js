@@ -26,6 +26,10 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 8vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
 `
 const Back = styled.img`
     width 10%;

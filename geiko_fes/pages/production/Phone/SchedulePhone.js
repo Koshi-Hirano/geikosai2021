@@ -17,7 +17,7 @@ const Schedule = styled.div`
 
 `
 const ScheduleImage = styled.img`
-    width: 70%;
+    width: 80%;
 `
 const Sub = styled.div`
     margin-top: 10vh;
@@ -29,9 +29,13 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 5vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
 `
 const Back = styled.img`
-    width 10%;
+    width 20%;
     margin-top: 10vh;
     margin-bottom: 5vh;
 `

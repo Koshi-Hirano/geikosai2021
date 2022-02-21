@@ -6,6 +6,7 @@ const Frame = styled.div`
 `
 const Container = styled.div`
     width: 82vw;
+    font-family: 'Helvetica Neue','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 `
 const Geikochan = styled.img`
     width: 80%;
@@ -23,27 +24,27 @@ const Date = styled.img`
 `
 const Mascot = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 70%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 80%;
+    margin-left: 12%;
 `
 const MascotImage = styled.img`
-    width: 40%;
+    width: 35%;
 `
 const MascotBox = styled.div`
-
+    width: 60%;
+    margin-left: 0%;
+    
 `
-const MascotTitle = styled.h2`
-    font-family: 游ゴシック;
-    font-weight: bold;
+const MascotTitle = styled.p`
+    font-size: 3vw;
+    font-weight: 1000;
     color: #633701;
 `
 const MascotPhrase = styled.p`
-    font-family: 游ゴシック;
     font-weight: 500;
-    font-size: 1.2vw;
+    font-size: 1.8vw;
 `
 const Sub = styled.div`
     margin-top: 15vh;
@@ -55,6 +56,10 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 8vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
 `
 const Back = styled.img`
     width 10%;

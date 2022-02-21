@@ -6,7 +6,7 @@ import SchedulePhone from "./production/Phone/SchedulePhone";
 export default function Schedule(){
     return <div>
         <Head>
-            <title>第18回芸工祭</title>
+            <title>スケジュール</title>
             <link rel="icon" href="./production/logo_touka.png" />
         </Head>
         <MediaQuery query="(max-width: 767px)">

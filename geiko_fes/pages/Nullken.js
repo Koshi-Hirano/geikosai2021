@@ -1,12 +1,19 @@
-import styled from "styled-components"
 import Head from "next/dist/shared/lib/head"
+import MediaQuery from "react-responsive"
+import NullkenPC from "./production/PC/NullkenPC"
+import NullkenPhone from "./production/Phone/NullkenPhone"
 
-export default function Nullken(){
+export default function Ippan(){
     return <div>
         <Head>
-            <title>第18回芸工祭</title>
-            <link rel="icon" href="./production/logo_touka.png" />
+            <title>未定研</title>
+            <link rel="icon" href="./production/nullkenlogo.png" />
         </Head>
-        Nullken
+        <MediaQuery query="(max-width: 767px)">
+            <NullkenPhone />            
+        </MediaQuery>
+        <MediaQuery query="(min-width: 768px)">
+            <NullkenPC />
+        </MediaQuery>
     </div>
 }

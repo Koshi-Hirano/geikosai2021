@@ -6,7 +6,7 @@ import AboutPhone from "./production/Phone/AboutPhone";
 export default function About(){
     return <div>
         <Head>
-            <title>第18回芸工祭</title>
+            <title>What is Geiko-fes?</title>
             <link rel="icon" href="./production/logo_touka.png" />
         </Head>
         <MediaQuery query="(max-width: 767px)">

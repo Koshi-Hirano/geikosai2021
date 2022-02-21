@@ -3,18 +3,19 @@ import Link from 'next/link'
 
 const Frame = styled.div`
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(230, 230, 230, 0.5); 
+    background-color: rgba(230, 230, 230, 0.5);
+    font-family: 'Helvetica Neue','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif; 
 `
 const Home = styled.img`
     height: 50%;
     margin-left: 5%;
 `
 const Logo = styled.img`
-    height: 90%;
+    height: 80%;
 `
 
 const Menu = styled.label`
@@ -30,10 +31,11 @@ const MenuContent = styled.nav`
     position: fixed;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
 `
 const Close = styled.label`
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     padding: 0;
     display: flex;
     flex-direction: row-reverse;
@@ -63,7 +65,6 @@ const NavHidden = styled.input`
         display: block;
         animation: ${Hiden} 1s;
     }
-    &:
 `
 const Line = styled.hr`
     width: 80%;
@@ -79,24 +80,25 @@ export default function Header(){
             <Link href="/About"><MenuItem>芸工祭について</MenuItem></Link>
             <Link href="/Schedule"><MenuItem>スケジュール</MenuItem></Link>
             <Link href="/Gakusai"><MenuItem>学祭企画</MenuItem></Link>
+            <Link href="/Workshop"><MenuItem>5研企画</MenuItem></Link>
+            <Link href="/ippan-kikaku"><MenuItem>一般企画</MenuItem></Link>
             <Line />
-            <Link href="/"><MenuItem>ご案内</MenuItem></Link>
-            <Link href="/"><MenuItem>お問い合わせ</MenuItem></Link>
+            <Link href="/Contact"><MenuItem>お問い合わせ</MenuItem></Link>
             <Link href="https://kyudaisai.jp/74th/link/"><MenuItem>九大祭ホームページ</MenuItem></Link>
+            <Link href="https://geiko.app/2021/11/04/connect-geikosai2021/"><MenuItem>芸工アプリ</MenuItem></Link>
             <Line />
             <Link href="https://twitter.com/QU_GEIKOfes_18"><MenuItem>Twitter</MenuItem></Link>
         </MenuContent>
         <Frame>
-            <Link href="./HomePage">
-                <Home src="./production/to_home.png" />
+            <Link href="/HomePage">
+                <Home src="/production/to_home.png" />
             </Link>
             <Link href='/HomePage'>
-                <Logo src="./production/logo_touka.png" />
+                <Logo src="/production/geikosai_logo.png" />
             </Link>
             <Menu for="nav-input">
-                <MenuImage src="./production/menu.png" />
+                <MenuImage src="/production/menu.png" />
             </Menu>
         </Frame>
     </div>
-    
 }

@@ -7,7 +7,7 @@ export default function CBA(){
     return <div>
         <Head>
             <title>CBA</title>
-            <link rel="icon" href="./production/logo_touka.png" />
+            <link rel="icon" href="./production/cbalogo.png" />
         </Head>
         <MediaQuery query="(max-width: 767px)">
             <CBAPhone />            

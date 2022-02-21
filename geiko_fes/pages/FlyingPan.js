@@ -6,7 +6,7 @@ import FlyingPanPhone from "./production/Phone/FlyingPanPhone";
 export default function FlyingPan(){
     return <div>
         <Head>
-            <title>第18回芸工祭</title>
+            <title>フライパン</title>
             <link rel="icon" href="./production/logo_touka.png" />
         </Head>
         <MediaQuery query="(max-width: 767px)">

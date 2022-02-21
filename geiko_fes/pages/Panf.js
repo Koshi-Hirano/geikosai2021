@@ -180,7 +180,7 @@ export default function Panf(){
     return <Container>
         <Head>
             <title>Panf21</title>
-            <link rel="icon" href="./production/logo_touka.png" />
+            <link rel="icon" href="./production/panf21.png" />
         </Head>
         <Header>
             <LogoImage src="./production/panf21.png" />

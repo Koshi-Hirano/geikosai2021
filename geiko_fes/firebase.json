@@ -5,6 +5,78 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [ 
+      {
+        "source": "/About",
+        "destination": "https://geikosai2021.jp/About.html",
+        "type": 301
+      },
+      {
+        "source": "/CBA",
+        "destination": "https://geikosai2021.jp/CBA.html",
+        "type": 301
+      },
+      {
+        "source": "/Firefes",
+        "destination": "https://geikosai2021.jp/Firefes.html",
+        "type": 301
+      },
+      {
+        "source": "/FlyingPan",
+        "destination": "https://geikosai2021.jp/FlyingPan.html",
+        "type": 301
+      },
+      {
+        "source": "/Gakusai",
+        "destination": "https://geikosai2021.jp/Gakusai.html",
+        "type": 301
+      },
+      {
+        "source": "/Workshop",
+        "destination": "https://geikosai2021.jp/Workshop.html",
+        "type": 301
+      },
+      {
+        "source": "/HomePage",
+        "destination": "https://geikosai2021.jp/HomePage.html",
+        "type": 301
+      },
+      {
+        "source": "/Nullken",
+        "destination": "https://geikosai2021.jp/Nullken.html",
+        "type": 301
+      },
+      {
+        "source": "/Panf",
+        "destination": "https://geikosai2021.jp/Panf.html",
+        "type": 301
+      },
+      {
+        "source": "/Schedule",
+        "destination": "https://geikosai2021.jp/Schedule.html",
+        "type": 301
+      },
+      {
+        "source": "/Zenya",
+        "destination": "https://geikosai2021.jp/Zenya.html",
+        "type": 301
+      },
+      {
+        "source": "/Contact",
+        "destination": "https://geikosai2021.jp/Contact.html",
+        "type": 301
+      },
+      {
+        "source": "/ippan-kikaku",
+        "destination": "https://geikosai2021.jp/ippan-kikaku.html",
+        "type": 301
+      },
+      {
+        "source": "/ippan-kikaku/5ken_ob",
+        "destination": "https://geikosai2021.jp/ippan/55ken_ob.html",
+        "type": 301
+      }  
     ]
   },
   "functions": {

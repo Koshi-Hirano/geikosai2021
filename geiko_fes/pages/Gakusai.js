@@ -6,7 +6,7 @@ import GakusaiPhone from "./production/Phone/GakusaiPhone";
 export default function Gakusai(){
     return <div>
         <Head>
-            <title>第18回芸工祭</title>
+            <title>学祭企画</title>
             <link rel="icon" href="./production/logo_touka.png" />
         </Head>
         <MediaQuery query="(max-width: 767px)">

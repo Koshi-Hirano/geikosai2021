@@ -1,11 +1,13 @@
 import styled from "styled-components"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Link from "next/link"
 
 const Frame = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Helvetica Neue','Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 `
 const Geikochan = styled.img`
     width: 80%;
@@ -15,20 +17,23 @@ const MainFrame = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10vh;
-`
-const SubFrame = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 60%;
-`
-const Title = styled.h1`
-    margin-top: 5vh;
     margin-bottom: 5vh;
 `
+const Title = styled.p`
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 6.0vw;
+    font-weight: bold;
+`
 const Phrase = styled.p`
-
+    width: 70%;
+    font-size: 4.5vw;
+    font-weight: 500;
+    color: rgb(120, 120, 120);
+`
+const ButtonImage = styled.img`
+    width: 60%;
+    margin-bottom: 3vh;
 `
 const Sub = styled.div`
     margin-top: 10vh;
@@ -40,9 +45,13 @@ const Sub = styled.div`
 `
 const SubImage = styled.img`
     height: 5vh;
+    transition: 1s;
+    &:hover{
+        transform: rotateX( 360deg );
+    }
 `
 const Back = styled.img`
-    width 10%;
+    width 20%;
     margin-top: 10vh;
     margin-bottom: 5vh;
 `
@@ -71,16 +80,12 @@ export default function IppanPhone(){
         <Sub><SubImage src="./production/content.png" /></Sub>
         <MainFrame>
             <Title>一般企画</Title>
-            <Phrase>text text text text text</Phrase>
+            <Phrase>一般企画は、教室などで学部内外からの公募により実施されます。</Phrase>
         </MainFrame>
-        <SubFrame>
-            <Title>anima</Title>
-            <Phrase>text text text text text</Phrase>
-        </SubFrame>
-        <SubFrame>
-            <Title>???</Title>
-            <Phrase>text text text text text</Phrase>
-        </SubFrame>
+        <Link href="/FlyingPan"><ButtonImage src="./production/ippan4.png" /></Link>
+        <Link href="https://animaproductionkid.wixsite.com/mysite/%E8%A4%87%E8%A3%BD-online-exhibition-%E3%82%B3%E5%B1%95"><ButtonImage src="./production/ippan3.png" /></Link>
+        <Link href="https://geikosai2021.github.io/5ken_ob/"><ButtonImage src="./production/ippan2.png" /></Link>
+        <Link href="https://3ken-ob-tent.studio.site/"><ButtonImage src="./production/ippan1.png" /></Link>
         <Back src="./production/tothetop.png" onClick={returnTop} />
         <Footer />
     </Frame>
